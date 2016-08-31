@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
         mOutputTextView = (TextView) findViewById(R.id.outputText);
         mConvertButton = (Button) findViewById(R.id.calcButton);
 
-
         mConvertButton.setOnClickListener(new View.OnClickListener() {
             String currentFah;
             String currentCell;

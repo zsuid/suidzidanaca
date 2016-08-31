@@ -22,13 +22,13 @@
     <EditText
         android:layout_width="355dp"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:id="@+id/numchar"
         android:layout_weight="0.03" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText2"
+        android:id="@+id/number"
         android:layout_weight="0.07" />
 
     <Button
