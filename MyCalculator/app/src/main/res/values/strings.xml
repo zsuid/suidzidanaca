@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MyCalculator</string>
     <string name="emptystring" />
+    <string name="ans">\@string()</string>
 </resources>

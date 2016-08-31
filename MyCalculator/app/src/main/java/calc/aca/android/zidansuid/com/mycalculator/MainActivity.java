@@ -1,6 +1,5 @@
 package calc.aca.android.zidansuid.com.mycalculator;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -28,14 +27,15 @@ public class MainActivity extends AppCompatActivity {
         EditText a1 = (EditText) findViewById(R.id.TFnum1);
         EditText a2 = (EditText) findViewById(R.id.TFnum2);
 
-        TextView tv = (TextView) findViewById(R.id.Lresult);
+        TextView tot = (TextView) findViewById(R.id.Lresult);
 
-        boolean flag = false;
+        boolean V = false;
 
-        double num1, num2, ans;
+        double num1, num2;
+        double ans;
         num1 = Double.parseDouble(a1.getText().toString());
         num2 = Double.parseDouble(a2.getText().toString());
-        ans = 0;
+        ans =  Double.parseDouble(a2.getText().toString());
 
         if (v.getId() == R.id.Badd)
             ans = num1 + num2;
@@ -48,12 +48,10 @@ public class MainActivity extends AppCompatActivity {
             ans = num1 * num2;
 
         if (v.getId() == R.id.Bdiv)
-            if (num2 == 0)
-                flag = true;
-            else
+
                 ans = num1 / num2;
 
-        tv.setText(ans + "");
+
 
 
     }
