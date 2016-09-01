@@ -6,29 +6,34 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
-    TextView mnumber;
-    TextView mchar;
-    TextView mOutputTextView;
+public class MainActivity extends AppCompatActivity
+{
 
-    Button mConvertButton;
+      TextView  chara;
+      TextView  number;
+      TextView convertedword;
+      Button mConvertButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mnumber = (TextView) findViewById(R.id.mnumber);
-        mchar = (TextView) findViewById(R.id.mchar);
-        mConvertButton = (Button) findViewById(R.id.conv);
-        mConvertButton.setOnClickListener(new View.OnClickListener() {
+        chara = (TextView)findViewById(R.id.mchar);
+        mConvertButton = (Button)findViewById(R.id.conv);
+        number = (TextView)findViewById(R.id.mnumber);
+
+        mConvertButton.setOnClickListener(new View.OnClickListener()
+        {
             String currentword;
             String convertedword;
 
             @Override
-            public void onClick(View view) {
-                if (!mnumber.getText().toString().equals("")) {
-                    currentword = mchar.getText().toString();
-
+            public void onClick(View view)
+            {
+                if (!chara.getText().toString().equals(""))
+                {
+                    currentword = chara.getText().toString();
+                    convertedword = chara.getText().toString();
                     int mnumber = 0;
                     char Char1 = currentword.charAt(0);
                     char Char2 = currentword.charAt(1);
@@ -65,13 +70,11 @@ public class MainActivity extends AppCompatActivity {
                     }
                     convertedword = String.valueOf(mnumber);
 
-                    System.out.println("The number is " + mnumber);
+                    // System.out.println("The number is " + mchar);
                 }
-                mOutputTextView.setText(mnumber.getText());
-
-
+                number.setText(convertedword);
             }
-        });
 
+        });
     }
 }

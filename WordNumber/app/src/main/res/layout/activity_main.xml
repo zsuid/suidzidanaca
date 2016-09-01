@@ -25,7 +25,7 @@
         android:id="@+id/mchar"
         android:layout_weight="0.03" />
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/mnumber"

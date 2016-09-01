@@ -8,53 +8,49 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    private com.google.android.gms.common.api.GoogleApiClient client;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new com.google.android.gms.common.api.GoogleApiClient.Builder(this).addApi(com.google.android.gms.appindexing.AppIndex.API).build();
     }
 
-    public void onButtonClick(View v) {
-        EditText a1 = (EditText) findViewById(R.id.TFnum1);
-        EditText a2 = (EditText) findViewById(R.id.TFnum2);
+    public void onButtonClick(View v)
+    {
+        // these are the text fields from emulator screen ,edit text
+        EditText a1 = (EditText)findViewById(R.id.LFnum1);
+        EditText a2 = (EditText)findViewById(R.id.LFnum2);
 
-        TextView tot = (TextView) findViewById(R.id.Lresult);
+        // this is the label result ,text view
 
-        boolean V = false;
-
-        double num1, num2;
-        double ans;
+        TextView tv = (TextView)findViewById(R.id.Lresult);
+        // no division  by 0
+        boolean flag = false;
+        double num1,num2,ans;
         num1 = Double.parseDouble(a1.getText().toString());
         num2 = Double.parseDouble(a2.getText().toString());
-        ans =  Double.parseDouble(a2.getText().toString());
 
-        if (v.getId() == R.id.Badd)
-            ans = num1 + num2;
+        ans = 0;
 
-        if (v.getId() == R.id.Bsub)
+
+        if(v.getId() == R.id.Badd)
+             ans = num1 + num2;
+        if(v.getId() == R.id.Bsub)
             ans = num1 - num2;
-
-
-        if (v.getId() == R.id.Bmult)
+        if(v.getId() == R.id.Bmult)
             ans = num1 * num2;
+        if(v.getId() == R.id.Bdiv)
+            //division by 0
+           if(num2 == 0)
+               flag = true;  //divsion by zero error
+            else
 
-        if (v.getId() == R.id.Bdiv)
+            ans = num1 / num2;
 
-                ans = num1 / num2;
+        tv.setText(ans+"");
 
 
 
 
     }
-
 
 }
