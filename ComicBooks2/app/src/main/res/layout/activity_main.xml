@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+
+    tools:context="calc.aca.android.zidansuid.com.comicbooks2.MainActivity"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Title"
+        android:id="@+id/Ltitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/Cissue" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Ctitle"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_toEndOf="@+id/Lcondition"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/Lcondition" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Issue"
+        android:id="@+id/Lissue"
+        android:layout_above="@+id/Ccondition"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Cissue"
+        android:layout_alignRight="@+id/Ctitle"
+        android:layout_alignEnd="@+id/Ctitle"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_below="@+id/Ctitle"
+        android:layout_toRightOf="@+id/Lcondition"
+        android:layout_toEndOf="@+id/Lcondition" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Condition"
+        android:id="@+id/Lcondition"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/Cprice" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Ccondition"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignRight="@+id/Cissue"
+        android:layout_alignEnd="@+id/Cissue"
+        android:layout_below="@+id/Cissue"
+        android:layout_toRightOf="@+id/Lcondition"
+        android:layout_toEndOf="@+id/Lcondition" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Price"
+        android:id="@+id/Lprice"
+        android:layout_toEndOf="@+id/Ltitle"
+        android:layout_alignBottom="@+id/Cprice"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Cprice"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/Ccondition"
+        android:layout_toRightOf="@+id/Lcondition"
+        android:layout_toEndOf="@+id/Lcondition" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Cbotton"
+        android:layout_below="@+id/Cprice"
+        android:text="ListAll"
+        android:layout_alignRight="@+id/Cprice"
+        android:layout_alignEnd="@+id/Cprice"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/ListView"
+        android:layout_below="@+id/Cbotton"
+        android:layout_alignRight="@+id/Cprice"
+        android:layout_alignEnd="@+id/Cprice"
+        android:layout_marginRight="102dp"
+        android:layout_marginEnd="102dp" />
+
+</RelativeLayout>
