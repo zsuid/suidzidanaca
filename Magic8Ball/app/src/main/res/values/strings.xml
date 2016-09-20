@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Magic8Ball</string>
+    <string name="hello_word">Hello world</string>
+    <string name="Magic8Ball">Magic Ball</string>
+    <string name="magic1">Odds Are not Good</string>
+    <string name="magic2">No</string>
+    <string name="magic3">It Will Pass</string>
+    <string name="magic4">Cannot Tell No</string>
+    <string name="magic5">You are Hot</string>
+    <string name="magic6">Count On It</string>
+    <string name="magic7">Be On It</string>
+    <string name="magic8">May Be</string>
+    <string name="magic9">Possibly</string>
+    <string name="magic10">Prospect Good</string>
+    <string name="magic11">Ask Again</string>
+    <string name="magic12">No Doubt</string>
+    <string name="magic13">Absolutely</string>
+    <string name="magic14">Very Likely</string>
+    <string name="magic15">Act Now</string>
+    <string name="magic16">Stars Say No</string>
+    <string name="magic17">Can not Say</string>
+    <string name="magic18">Not Now</string>
+    <string name="magic19">Go For It</string>
+    <string name="magic20">It is Alright</string>
+</resources>
+
