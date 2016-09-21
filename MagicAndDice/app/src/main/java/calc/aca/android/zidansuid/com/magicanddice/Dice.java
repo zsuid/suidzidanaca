@@ -50,7 +50,7 @@ public class Dice extends AppCompatActivity {
 
                 mrollNumber.setText("The Rolled Number Of The White Dice Is" + rolledNumber);
 
-                mrollNumber2.setText("The Rolled Number Of The Red Dice Is" + rolledNumber2);
+                mrollNumber2.setText("The Rolled Number Of The Yellow Dice Is" + rolledNumber2);
 
                 mtotal.setText("the Total Number of The Two Dices Is" + (rolledNumber + rolledNumber2));
 

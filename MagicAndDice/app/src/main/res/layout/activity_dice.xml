@@ -13,15 +13,6 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/mdice"
-        android:src="@drawable/dice4"
-        android:layout_toEndOf="@+id/mdice2"
-        android:layout_alignTop="@+id/mdice2"
-        android:layout_alignBottom="@+id/mdice2"/>
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/mdice2"
         android:src="@drawable/e"
         android:layout_alignParentTop="true"
@@ -54,7 +45,6 @@
         android:layout_above="@+id/mtotal"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="55dp"
-        android:layout_alignEnd="@+id/mdice2"
         android:textStyle="bold"
         android:textSize="15dp"/>
 
@@ -67,5 +57,14 @@
         android:layout_alignParentStart="true"
         android:textStyle="bold"
         android:textSize="15dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mdice"
+        android:src="@drawable/dice4"
+        android:layout_marginEnd="19dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"/>
 
 </RelativeLayout>
