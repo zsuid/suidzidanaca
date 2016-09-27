@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Fab Five"
+            android:id="@+id/textView"
+            android:layout_weight="0.05"
+            android:textStyle="bold|italic"
+            android:textSize="40dp"
+            android:layout_gravity="bottom"
+            android:textAlignment="center" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Ename"
+            android:layout_weight="0.1"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_gravity="top"
+            android:hint="Contact Name" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPostalAddress"
+            android:ems="10"
+            android:id="@+id/Eaddress1"
+            android:layout_weight="0.1"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_gravity="top"
+            android:hint="Contact Address Line 1" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPostalAddress"
+            android:ems="10"
+            android:id="@+id/Eaddress2"
+            android:layout_weight="0.1"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_gravity="top|bottom"
+            android:hint="Contact Address 2" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:ems="10"
+            android:id="@+id/Ephone"
+            android:layout_weight="0.10"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_gravity="top"
+            android:hint="Contact Phone Number" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/Email"
+            android:layout_weight="0.10"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_gravity="top"
+            android:hint="Contact Email" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="117dp"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Glocation"
+                    android:id="@+id/Glocation"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="ListView"
+                    android:id="@+id/ListButton"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Send Email"
+                    android:id="@+id/GEmail"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="26dp"
+                android:layout_height="56dp"
+                android:id="@+id/List" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

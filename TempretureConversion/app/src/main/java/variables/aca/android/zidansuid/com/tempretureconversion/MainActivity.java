@@ -17,10 +17,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mFah = (TextView) findViewById(R.id.fahText);
-        mCel = (TextView) findViewById(R.id.celText);
+        mCel = (TextView) findViewById(R.id.mCel);
         mOutputTextView = (TextView) findViewById(R.id.outputText);
         mConvertButton = (Button) findViewById(R.id.calcButton);
-
 
         mConvertButton.setOnClickListener(new View.OnClickListener() {
             String currentFah;

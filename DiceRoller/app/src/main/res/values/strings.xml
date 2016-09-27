@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DiceRoller</string>
+    <string name="roll">roll</string>
+    <string name="total">total</string>
+    <string name="dice1">dice1</string>
+    <string name="dice2"/>
+    <string name="dicew"/>
+    <string name="sum"/>
+</resources>
