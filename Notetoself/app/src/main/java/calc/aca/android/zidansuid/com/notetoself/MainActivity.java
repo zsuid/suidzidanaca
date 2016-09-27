@@ -3,6 +3,12 @@ package calc.aca.android.zidansuid.com.notetoself;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.AssetFileDescriptor;
+import android.content.res.AssetManager;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.media.SoundPool;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -19,6 +25,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
 
     Animation mAnimFlash;
     Animation mFadeIn;
+
+    //adding sound effects
+    int mIdBeep = -1;
+    SoundPool mSp;
+
 
 
     // Temporary code
@@ -74,6 +86,39 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //adding code for sound
+
+        // Instantiate our sound pool
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_MEDIA)
+                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                    .build();
+
+            mSp = new SoundPool.Builder()
+                    .setMaxStreams(5)
+                    .setAudioAttributes(audioAttributes)
+                    .build();
+        } else {
+            mSp = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
+        }
+
+
+        try{
+            // Create objects of the 2 required classes
+            AssetManager assetManager = this.getAssets();
+            AssetFileDescriptor descriptor;
+
+            // Load our fx in memory ready for use
+            descriptor = assetManager.openFd("beep.ogg");
+            mIdBeep = mSp.load(descriptor, 0);
+
+
+        }catch(IOException e){
+            // Print an error message to the console
+            Log.e("error", "failed to load sound files");
+        }
+
 
 
 
@@ -84,10 +129,33 @@ public class MainActivity extends AppCompatActivity {
         listNote.setAdapter(mNoteAdapter);
 
         // Handle clicks on the ListView
+        //deleting note
+        // So we can long click it
+        listNote.setLongClickable(true);
+
+// Now to detect long clicks and delete the note
+        listNote.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+            public boolean onItemLongClick(AdapterView<?> adapter, View view,
+                                           int whichItem, long id) {
+
+                // Ask NoteAdapter to delete this entry
+                mNoteAdapter.deleteNote(whichItem);
+
+                return true;
+            }
+        });
+
         listNote.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
 
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, int whichItem, long id) {
+
+                //place sound
+                if(mSound) {
+                    mSp.play(mIdBeep, 1, 1, 0, 0, 1);
+                }
 
     /*
       Create  a temporary Note
@@ -262,6 +330,13 @@ public class MainActivity extends AppCompatActivity {
             notifyDataSetChanged();
 
         }
+        public void deleteNote(int n){
+
+           noteList.remove(n);
+          notifyDataSetChanged();
+
+        }
+
 
 
     }
