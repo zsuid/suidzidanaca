@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     // Temporary code
-    // Note mTempNote = new Note();
+    //   Note mTempNote = new Note();
     private NoteAdapter mNoteAdapter;
 
     private boolean mSound;
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
 
         mNoteAdapter = new NoteAdapter();
 
-        ListView listNote = (ListView) findViewById(R.id.listView);
+        ListView listNote = (ListView) findViewById(R.id.ListView);
 
         listNote.setAdapter(mNoteAdapter);
 
@@ -207,21 +207,13 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
             return true;
         }
         if (id == R.id.action_add) {
             DialogNewNote dialog = new DialogNewNote();
             dialog.show(getSupportFragmentManager(), "");
-            return true;
-        }
-
-
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            Intent intent = new Intent(this, SettingsActivity.class);
-            startActivity(intent);
-
             return true;
         }
 
@@ -332,8 +324,8 @@ public class MainActivity extends AppCompatActivity {
         }
         public void deleteNote(int n){
 
-           noteList.remove(n);
-          notifyDataSetChanged();
+            noteList.remove(n);
+            notifyDataSetChanged();
 
         }
 
