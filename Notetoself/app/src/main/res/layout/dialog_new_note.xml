@@ -8,8 +8,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
+        android:inputType="text"
         android:ems="10"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -24,7 +23,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textImeMultiLine"
-        android:text="Name"
         android:ems="10"
         android:layout_below="@+id/editTitle"
         android:layout_alignLeft="@+id/editTitle"
@@ -32,6 +30,15 @@
         android:id="@+id/editDescription"
         android:layout_marginTop="35dp"
         android:hint="@string/description_hint"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/imageView"
+        android:src="@mipmap/ic_launcher"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/btnOK"
+        android:layout_alignEnd="@+id/btnOK"/>
 
     <CheckBox
         android:text="@string/idea_checkbox"
@@ -53,6 +60,7 @@
         android:layout_marginTop="35dp"
         android:id="@+id/checkBoxToDo"/>
 
+
     <CheckBox
         android:text="@string/important_checkbox"
         android:layout_width="wrap_content"
@@ -64,23 +72,42 @@
         android:id="@+id/checkBoxImportant"/>
 
     <Button
-        android:text="@string/cancel_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBoxImportant"
-        android:layout_alignLeft="@+id/checkBoxImportant"
-        android:layout_alignStart="@+id/checkBoxImportant"
-        android:layout_marginTop="35dp"
-        android:id="@+id/btnCancel"/>
-
-    <Button
         android:text="@string/ok_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/btnCancel"
+        android:id="@+id/btnOK"
+        android:layout_alignBaseline="@+id/btnCancel"
+        android:layout_alignBottom="@+id/btnCancel"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCapture"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/btnCancel"
+        android:layout_alignStart="@+id/btnCancel"
+        android:text="@string/capture_button"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSave"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="17dp"
-        android:layout_marginEnd="17dp"
-        android:id="@+id/btnOK"/>
+        android:text="@string/save_button"/>
+
+    <Button
+        android:text="@string/cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:id="@+id/btnCancel"
+        android:hint="capture"
+        android:layout_below="@+id/checkBoxImportant"
+        android:layout_alignLeft="@+id/checkBoxImportant"
+        android:layout_alignStart="@+id/checkBoxImportant"/>
+
 </RelativeLayout>
