@@ -6,9 +6,10 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,12 +17,15 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends ActionBarActivity implements ActivityComs  {
     private ListView mNavDrawerList;
     private DrawerLayout mDrawerLayout;
     private ArrayAdapter<String> mAdapter;
     private ActionBarDrawerToggle mDrawerToggle;
     private String mActivityTitle;
+
+    public DataManager dataManager;
+
 
 
     @Override
@@ -31,14 +35,22 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //Initialize the DataManager instance
+
+        dataManager = new DataManager(getApplicationContext());
+
+
+
         // We will come back here in a minute!
+
+
         mNavDrawerList = (ListView)findViewById(R.id.navList);
         mDrawerLayout = (DrawerLayout)findViewById(R.id.drawerLayout);
         mActivityTitle = getTitle().toString();
 
         // We will finish off this method next
         // From here
-// Initialize an array with our titles from strings.xml
+        // Initialize an array with our titles from strings.xml
         String[] navMenuTitles = getResources().getStringArray(R.array.nav_drawer_items);
         // Initialize our ArrayAdapter
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, navMenuTitles);
@@ -57,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
                 switchFragment(whichItem);
 
+
             }
         });
 
@@ -65,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
 
     private void switchFragment(int position) {
 
@@ -134,6 +148,58 @@ public class MainActivity extends AppCompatActivity {
         mDrawerLayout.setDrawerListener(mDrawerToggle);
     }
 
+    public void onTagsListItemSelected(String clickedTag){
+        // We have just received a String for the TitlesFragment
+
+        // Prepare a new Bundle
+        Bundle args = new Bundle();
+
+        // Pack the string into the Bundle
+        args.putString("Tag", clickedTag);
+
+        //Create a new instance of TitlesFragment
+        TitlesFragment fragment = new TitlesFragment();
+
+        // Load the Bundle into the Fragment
+        fragment.setArguments(args);
+
+        // Start the fragment
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.fragmentHolder, fragment, "TAGS").commit();
+
+        // update selected item and title, then close the drawer
+        mNavDrawerList.setItemChecked(1, true);
+        mNavDrawerList.setSelection(1);
+        mDrawerLayout.closeDrawer(mNavDrawerList);
+
+    }
+    // Open ViewFragment with the photo indicated by position
+    public void onTitlesListItemSelected(int position) {
+
+        // Load up the bundle with the row _id
+        Bundle args = new Bundle();
+        args.putInt("Position", position);
+
+        // Create the fragment and add the bundle
+        ViewFragment fragment = new ViewFragment();
+        fragment.setArguments(args);
+
+        // Start the fragment
+        if (fragment != null) {
+            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.fragmentHolder, fragment, "VIEW").commit();
+
+            // update selected item and title, then close the drawer
+            mNavDrawerList.setItemChecked(1, true);
+            mNavDrawerList.setSelection(1);
+            //setTitle(navMenuTitles[position]);
+            mDrawerLayout.closeDrawer(mNavDrawerList);
+        } else {
+            // error in creating fragment
+            Log.e("MainActivity", "Error in creating fragment");
+        }
+
+    }
 
 
     @Override

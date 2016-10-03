@@ -23,14 +23,14 @@ import java.util.List;
 public class JSONSerializer {
 
 
-        private String mFilename;
-        private Context mContext;
+    private String mFilename;
+    private Context mContext;
 
-        // All the rest of the code for the class goes here
-        public JSONSerializer(String fn, Context con){
-            mFilename = fn;
-            mContext = con;
-        }
+    // All the rest of the code for the class goes here
+    public JSONSerializer(String fn, Context con){
+        mFilename = fn;
+        mContext = con;
+    }
     public void save(List<Note> notes)
             throws IOException, JSONException {
 
@@ -92,5 +92,6 @@ public class JSONSerializer {
 
 
 }// End of class
+
 
 

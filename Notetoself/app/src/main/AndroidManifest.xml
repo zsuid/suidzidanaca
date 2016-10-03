@@ -18,7 +18,7 @@
 
 
         <activity android:name=".SettingsActivity"
-            android:parentActivityName=".MainActivity">
+                  android:parentActivityName=".MainActivity">
         </activity>
     </application>
 
