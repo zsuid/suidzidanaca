@@ -17,16 +17,21 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
+
 /**
  * Created by zidansuid on 9/15/16.
  */
 public class DialogNewNote extends DialogFragment {
+
+
 
     //member variables for the image capture
 
@@ -43,6 +48,7 @@ public class DialogNewNote extends DialogFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
     }
 
@@ -61,9 +67,9 @@ public class DialogNewNote extends DialogFragment {
         final CheckBox checkBoxTodo = (CheckBox) dialogView.findViewById(R.id.checkBoxToDo);
         final CheckBox checkBoxImportant = (CheckBox) dialogView.findViewById(R.id.checkBoxImportant);
         Button btnCancel = (Button) dialogView.findViewById(R.id.btnCancel);
-        Button btnOK = (Button) dialogView.findViewById(R.id.btnOK);
+        Button btnOK = (Button) dialogView.findViewById(R.id.btnOk);
+        // Button btnSave = (Button)dialogView.findViewById(R.id.btnCapture);
         Button btnCapture = (Button)dialogView.findViewById(R.id.btnCapture);
-        Button btnSave = (Button)dialogView.findViewById(R.id.btnSave);
         mImageView = (ImageView)dialogView.findViewById(R.id.imageView);
         builder.setView(dialogView).setMessage("Add a new note");
 
@@ -74,31 +80,8 @@ public class DialogNewNote extends DialogFragment {
                 dismiss();
             }
         });
-// Handle the OK button
-        btnOK.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                // Create a new note
-                Note newNote = new Note();
 
-                // Set its variables to match the users entries on the form
-                newNote.setTitle(editTitle.getText().toString());
-                newNote.setDescription(editDescription.getText().toString());
-                newNote.setIdea(checkBoxIdea.isChecked());
-                newNote.setTodo(checkBoxTodo.isChecked());
-                newNote.setImportant(checkBoxImportant.isChecked());
-
-                // Get a reference to MainActivity
-                MainActivity callingActivity = (MainActivity) getActivity();
-
-                // Pass newNote back to MainActivity
-                callingActivity.createNewNote(newNote);
-
-                // Quit the dialog
-                dismiss();
-            }
-        });
         // Listen for clicks on the capture button
         btnCapture.setOnClickListener(new View.OnClickListener() {
 
@@ -127,6 +110,53 @@ public class DialogNewNote extends DialogFragment {
             }
         });
 
+        // Listen for clicks on the save button
+
+        btnOK.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if(mImageUri != null){
+                    if(!mImageUri.equals(Uri.EMPTY)) {
+
+                        Note note = new Note();
+                        note.setTitle(editTitle.getText().toString());
+                        note.setStorageLocation(mImageUri);
+                        // We have a photo to save
+                        note.setTitle(editTitle.getText().toString());
+                        note.setDescription(editDescription.getText().toString());
+                        note.setIdea(checkBoxIdea.isChecked());
+                        note.setTodo(checkBoxTodo.isChecked());
+                        note.setImportant(checkBoxImportant.isChecked());
+
+// Get a reference to MainActivity
+                        MainActivity callingActivity = (MainActivity) getActivity();
+                        callingActivity.createNewNote(note);
+                        // Pass newNote back to MainActivity
+
+
+
+
+                        Toast.makeText(getActivity(), "Saved", Toast.LENGTH_LONG).show();
+                    }else {
+                        // No image
+                        Toast.makeText(getActivity(), "No image to save", Toast.LENGTH_LONG).show();
+                    }
+                }else {
+                    // Uri not initialized
+                    Log.e("Error ", "uri is null");
+                }
+
+                dismiss();
+
+            }
+
+
+
+
+        });
+
+
         return builder.create();
 
     }
@@ -134,7 +164,7 @@ public class DialogNewNote extends DialogFragment {
         // Create an image file name
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "JPEG_" + timeStamp + "_";
-        File storageDir = Environment.getExternalStoragePublicDirectory(
+        File storageDir = getActivity().getExternalFilesDir(
                 Environment.DIRECTORY_PICTURES);
         File image = File.createTempFile(
                 imageFileName,  // filename

@@ -1,6 +1,7 @@
 package calc.aca.android.zidansuid.com.whereitssnap;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
@@ -11,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.util.Locale;
 
 /**
  * Created by zidansuid on 9/28/16.
@@ -49,6 +52,24 @@ public class ViewFragment extends Fragment {
 
         // Load the image into the TextView via the URI
         mImageView.setImageURI(Uri.parse(mCursor.getString(mCursor.getColumnIndex(DataManager.TABLE_ROW_URI))));
+        buttonShowLocation.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                double latitude = Double.valueOf(mCursor.getString(mCursor.getColumnIndex(DataManager.TABLE_ROW_LOCATION_LAT)));
+                double longitude = Double.valueOf(mCursor.getString(mCursor.getColumnIndex(DataManager.TABLE_ROW_LOCATION_LONG)));
+
+                // Create a URI from the latitude and longitude
+                String uri = String.format(Locale.ENGLISH, "geo:%f,%f", latitude, longitude);
+
+                // Create a Google maps intent
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+
+                // Start the maps activity
+                getActivity().startActivity(intent);
+            }
+        });
 
 
         return view;

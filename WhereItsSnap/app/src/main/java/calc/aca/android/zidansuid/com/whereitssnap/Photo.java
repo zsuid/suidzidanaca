@@ -1,5 +1,6 @@
 package calc.aca.android.zidansuid.com.whereitssnap;
 
+import android.location.Location;
 import android.net.Uri;
 
 /**
@@ -12,9 +13,17 @@ public class Photo {
 
     private String mTitle;
     private Uri mStorageLocation;
+    private Location mGpsLocation;
     private String mTag1;
     private String mTag2;
     private String mTag3;
+
+    public Location getGpsLocation() {
+        return mGpsLocation;
+    }
+
+    public void setGpsLocation(Location mGpsLocation) {
+        this.mGpsLocation = mGpsLocation;}
 
     public String getTitle() {
         return mTitle;

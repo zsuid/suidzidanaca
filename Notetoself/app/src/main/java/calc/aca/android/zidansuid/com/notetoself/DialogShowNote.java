@@ -37,7 +37,8 @@ public class DialogShowNote extends DialogFragment {
 
         ImageView ivTodo = (ImageView) dialogView.findViewById(R.id.imageViewTodo);
         ImageView ivIdea = (ImageView) dialogView.findViewById(R.id.imageViewIdea);
-
+        ImageView imageViewPhoto = (ImageView) dialogView.findViewById(R.id.imageViewPhoto);
+        imageViewPhoto.setImageURI(mNote.getStorageLocation());
         if (!mNote.isImportant()) {
             ivImportant.setVisibility(View.GONE);
         }
@@ -50,7 +51,7 @@ public class DialogShowNote extends DialogFragment {
             ivIdea.setVisibility(View.GONE);
         }
 
-        Button btnOK = (Button) dialogView.findViewById(R.id.btnOK);
+        Button btnOK = (Button) dialogView.findViewById(R.id.btnOk);
 
         builder.setView(dialogView).setMessage("Your Note");
 

@@ -1,5 +1,7 @@
 package calc.aca.android.zidansuid.com.notetoself;
 
+import android.net.Uri;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -12,11 +14,24 @@ public class Note {
     private static final String JSON_IDEA = "idea" ;
     private static final String JSON_TODO = "todo";
     private static final String JSON_IMPORTANT = "important";
+    private static final String JSON_Uri = "StorageLocation";
 
     private String mTitle;
     private String mDescription;
     private boolean mIdea;
     private boolean mTodo;
+    private boolean mImportant;
+    private Uri StorageLocation;
+
+
+
+    public Uri getStorageLocation() {
+        return StorageLocation;
+    }
+
+    public void setStorageLocation(Uri storageLocation) {
+        this.StorageLocation = storageLocation;
+    }
 
     public boolean isImportant() {
         return mImportant;
@@ -39,6 +54,8 @@ public class Note {
         mIdea = jo.getBoolean(JSON_IDEA);
         mTodo = jo.getBoolean(JSON_TODO);
         mImportant = jo.getBoolean(JSON_IMPORTANT);
+        StorageLocation = Uri.parse(jo.getString(JSON_Uri));
+
     }
 
     // Now we must provide an empty default constructor
@@ -77,7 +94,7 @@ public class Note {
         this.mTodo = mTodo;
     }
 
-    private boolean mImportant;
+
 
     public JSONObject convertToJSON() throws JSONException{
 
@@ -88,6 +105,8 @@ public class Note {
         jo.put(JSON_IDEA, mIdea);
         jo.put(JSON_TODO, mTodo);
         jo.put(JSON_IMPORTANT, mImportant);
+        jo.put(JSON_Uri, StorageLocation.toString());
+
 
         return jo;
     }

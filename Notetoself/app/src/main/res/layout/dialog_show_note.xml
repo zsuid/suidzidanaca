@@ -43,26 +43,6 @@
         android:layout_toEndOf="@+id/imageViewTodo"
         android:src="@drawable/ic_wb_incandescent_black_24dp"/>
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageViewIdea"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp"
-        android:id="@+id/txtTitle"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name"
-        android:ems="10"
-        android:layout_below="@+id/txtTitle"
-        android:layout_alignLeft="@+id/imageViewImportant"
-        android:layout_alignStart="@+id/imageViewImportant"
-        android:layout_marginTop="18dp"
-        android:id="@+id/txtDescription"/>
-
     <Button
         android:text="@string/ok_button"
         android:layout_width="wrap_content"
@@ -70,5 +50,40 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="37dp"
-        android:id="@+id/btnOK"/>
+        android:id="@+id/btnOk"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_marginLeft="27dp"
+        android:layout_marginStart="27dp"
+        android:id="@+id/imageViewPhoto"
+        android:layout_below="@+id/imageViewIdea"
+        android:layout_toRightOf="@+id/btnOk"
+        android:layout_toEndOf="@+id/btnOk"
+        android:layout_marginTop="51dp"/>
+
+    <TextView
+        android:text=" "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtTitle"
+        android:layout_alignBottom="@+id/imageViewPhoto"
+        android:layout_alignLeft="@+id/imageViewImportant"
+        android:layout_alignStart="@+id/imageViewImportant"
+        android:layout_marginBottom="13dp"
+        android:hint="@string/title_hint"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        android:ems="10"
+        android:id="@+id/txtDescription"
+        android:layout_marginTop="28dp"
+        android:layout_below="@+id/imageViewPhoto"
+        android:layout_alignLeft="@+id/txtTitle"
+        android:layout_alignStart="@+id/txtTitle"
+        android:hint="@string/description_hint"/>
 </RelativeLayout>
