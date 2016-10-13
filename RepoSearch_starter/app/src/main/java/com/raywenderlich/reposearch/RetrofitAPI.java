@@ -13,6 +13,4 @@ public interface RetrofitAPI {
 
     @GET("/repositories")
     Call<ArrayList<Repository>> retrieveRepositories();
-
-
 }

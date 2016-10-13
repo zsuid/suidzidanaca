@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "776382349753",
+    "firebase_url": "https://fir-authdemo-52105.firebaseio.com",
+    "project_id": "fir-authdemo-52105",
+    "storage_bucket": "fir-authdemo-52105.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:776382349753:android:a38247df766fdba7",
+        "android_client_info": {
+          "package_name": "calc.aca.android.zidansuid.com.firebaseauthdemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "776382349753-kpq8gebn36qujpao5srs3pftog83b9ds.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBK5XGdRrVtIoOA06ho42dbvtkd6AtNVKE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

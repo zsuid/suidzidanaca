@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/zidansuid/Desktop/suidzidanaca/rxandroidexamples/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="7952a4f82c051328a2016914f6c217bd487a45ca">
+        <dex dex="/Users/zidansuid/Desktop/suidzidanaca/rxandroidexamples/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_1e6c28c934e558f46009cf3d3db156f200cb7285/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zidansuid/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="/Users/zidansuid/Desktop/suidzidanaca/rxandroidexamples/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.1.1_4bd9244bbb9925ad347ccad1d7abac827ca807ae/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zidansuid/Desktop/suidzidanaca/rxandroidexamples/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="49641b772519de7bf677ab63ab2a567db0288823">
+        <dex dex="/Users/zidansuid/Desktop/suidzidanaca/rxandroidexamples/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_964fd6ef25cf8d79c25b6742c2fa20219c5d3293/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zidansuid/Desktop/suidzidanaca/rxandroidexamples/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="/Users/zidansuid/Desktop/suidzidanaca/rxandroidexamples/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.1.1_bd07a6eb2736bc50c6ab52b610d27e537f4cfb04/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zidansuid/Desktop/suidzidanaca/rxandroidexamples/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="/Users/zidansuid/Desktop/suidzidanaca/rxandroidexamples/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.1.1_3a37af3fce0e299586d0c15c717f6e5cae81fc7e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zidansuid/Desktop/suidzidanaca/rxandroidexamples/app/build/intermediates/exploded-aar/io.reactivex/rxandroid/1.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d4c4b83de2f6412072d2a29b1b7a5b03edaad5ff">
+        <dex dex="/Users/zidansuid/Desktop/suidzidanaca/rxandroidexamples/app/build/intermediates/transforms/dex/debug/folders/1000/10/io.reactivex-rxandroid-1.1.0_c0c318cdec0b6c3a36bb45d5bbe76d7a81fef2a5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zidansuid/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.1.0/748f0546d5c3c27f1aef07270ffea0c45f0c42a4/rxjava-1.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="748f0546d5c3c27f1aef07270ffea0c45f0c42a4">
+        <dex dex="/Users/zidansuid/Desktop/suidzidanaca/rxandroidexamples/app/build/intermediates/transforms/dex/debug/folders/1000/10/rxjava-1.1.0_d2899355124c86c7fe794e62faa28884db9aa040/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zidansuid/Desktop/suidzidanaca/rxandroidexamples/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="/Users/zidansuid/Desktop/suidzidanaca/rxandroidexamples/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.1.1_c1d0e12efee6c650a1e3a8d42ae17012961c168c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zidansuid/Desktop/suidzidanaca/rxandroidexamples/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="/Users/zidansuid/Desktop/suidzidanaca/rxandroidexamples/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.1.1_28d191f2f0179d72e4341ad1783db4d238d2029c/classes.dex" />
+    </item>
+
+</items>
